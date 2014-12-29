@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app="groceryApp">
+  <head><title>Your Grocery List</title></head>
+
+  <body ng-controller="MainCtrl as ctrl">
+    <div ng-repeat="list in ctrl.lists">
+      <span> {{list.item}} </span>
+    </div>
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.28/angular.min.js"></script>
+    <script type="text/javascript">
+      angular
+        .module('groceryApp', [])
+        .controller('MainCtrl', [function(){
+          var self = this;
+          self.lists = [ 
+            {id: 1, item: 'Apples'},
+            {id: 2, item: 'Oranges'},
+            {id: 3, item: 'Milk'},
+            {id: 4, item: 'Tissue'},
+          ]
+        }]);
+    </script>
+  </body>
+</html>
